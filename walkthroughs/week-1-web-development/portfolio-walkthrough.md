@@ -391,6 +391,19 @@ Now when you navigate to
 [https://console.cloud.google.com/appengine](https://console.cloud.google.com/appengine),
 you should see `Your App Engine application has been created`.
 
+## Service Account Permissions
+
+Google Cloud uses service accounts to do certain things. To use App Engine,
+you need to enable App Engine for your service account. 
+
+-   Navigate to
+    [https://console.cloud.google.com/cloud-build/settings/service-account](https://console.cloud.google.com/cloud-build/settings/service-account).
+-   Make sure your project is selected in the dropdown at the top.
+-   Change the `App Engine` service to `Enabled`.
+-   If a dialog opens, click the `Skip` button to close it.
+
+The setting saves automatically, so you can close that tab before continuing.
+
 ## Live Server
 
 When you're happy with your portfolio page and you're ready to show it to the
@@ -448,12 +461,12 @@ If you have extra time left over, consider adding a page that describes your
 experiences with SPS so far, or writing JavaScript that makes your page
 interactive, or using CSS to make your page more beautiful.
 
-Next week, you'll learn about server-side code and add a comment feature to your
-portfolio.
+Next week, you'll learn about server-side code and add a "contact me" feature to
+your portfolio.
 
 When you're ready, start the next walkthrough by running this command:
 
 ```bash
-teachme ~/software-product-sprint/walkthroughs/week-2-server/comments-walkthrough.md
+teachme ~/software-product-sprint/walkthroughs/week-2-server/project-1-walkthrough.md
 ```
 

@@ -1,45 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>Vi's Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>My name is Vi, and I'm majoring in Computer Science.</p>
-      <p>I love playing basketball and the feeling of being in a team.</p>
-      <p>"Teamwork makes the dream work", which is a great quote to me!</p>
-      <p>Click here to get a random fact about me:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-      <img src="/images/Vi.jpg" width="400" />
-      <p>Here are the projects that I have worked on.</p>
-      <ol>
-            <li>Student's Grade Book: 
-                <ul>
-                    <li>Ask for input of username and password for logging in or creating a new account.</li>
-                    <li>Store the students' information and their grades.</li> 
-                </ul> 
-            </li> 
-            <li>Netflix's Search: 
-                <ul>
-                    <li>Create movies/ films/ drama and put them into categories. </li> 
-                    <li>Users are able to search and find the movies/ films/ drama/ categories they want.</li> 
-                </ul>
-            </li> 
-            <li>Bank System: 
-                <ul>
-                    <li>Calculate the customers' average waiting time of the day</li>
-                </ul>
-            </li>
-      </ol>
-      <!--<p>Click <a href="/hello">here</a> to see content created by server code.</p>-->
-      <p><a href="https://github.com/vinguyen12" target="_blank">Here</a> is my Github profiles.</p>
-      <p>Go to my <a href="blog.html">blog</a> to find more things about me.</p>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>My Porfolio</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Vi Nguyen</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#others">Others</a>
     </div>
-  </body>
+
+    <div class="container">
+        <!-- Images -->
+        <img src="images\saigon.jpg" alt="Norway" width=100%>
+        <div class="text-block">
+            <h1> Welcome to my portfolio</h1>
+        </div>
+    </div>
+
+    <div class="container1">
+        <div class="text-block1">
+            <img id="img1" src="images\Vi.jpg" alt="Avatar" width=400px>
+            <h1>Vi Nguyen</h1>
+            <p>Majoring in Computer Science<br/>at California State University, Fresno</p> 
+        
+        </div>
+        <div class="container2">
+            <div class="readmore">
+                <h2>Read More</h2> 
+            </div>      
+        </div>
+    </div>
+</body>
 </html>

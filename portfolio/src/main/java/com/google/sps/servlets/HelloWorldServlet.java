@@ -23,7 +23,11 @@ public class HelloWorldServlet extends HttpServlet {
     String message = randomMessages();
 
     response.setContentType("text/html;");
+<<<<<<< HEAD
     response.getWriter().println(message);
+=======
+    response.getWriter().println("Hello Vi!");
+>>>>>>> 0311b52bf18c85240418167ab6426346ce40510a
   }
 
   private String randomMessages() {

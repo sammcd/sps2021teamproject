@@ -43,9 +43,36 @@
 
 
 /*  */
-.block{
+
+/*  */
+.Heading{
+    color:black;
+    padding-left: 49%;
+    padding-bottom: 2%;
+    font-size: 20px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+}
+.links{
     align-content: center;
     align-items: center;
     text-align: center;
     border: #76b852;
+
+  }
+  .links a {
+    color: black;
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+  }
+  .links a:hover {
+  background-color:yellow;
+  color:black;
+}
+
+.links a:active {
+  background-color: black;
+  color: black;
 }

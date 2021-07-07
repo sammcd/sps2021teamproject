@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck of Addition</title>
+    <link rel="stylesheet" href="css/addition.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- nav bar  -->
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="index.html" class="nav-button"> Flashcard </a></li>
+            <li><a href="categories.html" class="nav-button"> Categories </a></li>
+            <li><a href="create.html" class="nav-button"> Create </a></li>
+            <li><a href="test.html" class="nav-button"> Test </a></li>
+        </ul>
+    </nav>
+    <form class="input" id="addition">
+        <h1>Math Categories - Addition:</h1>
+        <input type="number" name="numberofcards" placeholder="Number of Cards...">
+        <br><br>
+        <input type="number" name="maximum1" placeholder="Maximum of 1st number...">
+        <br><br>
+        <input type="number" name="maximum2" placeholder="Maximum of 2nd number...">
+        <button></button>
+    </form>
+    <button onclick="addDeck()">Create Deck</button>
+</body>
+</html>

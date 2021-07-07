@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* nav bar  */
+.navbar{
+    display: flex;
+    background-color:grey;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: baseline;
+    flex-grow: 1;
+    z-index: 999;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.navbar .menu li a:hover{
+    color:red;
+}
+
+ .navbar .menu .li a:active{
+     background-color: black;
+    color: white;
+ }
+
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+
+/*  */
+
+ .links{
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    border: #76b852;
+
+  }
+  .links a {
+    color: black;
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+  }
+  .links a:hover {
+  background-color:yellow;
+  color:black;
+}
+
+.links a:active {
+  background-color: black;
+  color: black;
+}
+
+
+/* create button*/
+.create-button{
+    height: 60px;
+    font: normal normal 700 1em/4em Arial,sans-serif;    
+    overflow: hidden;
+    width: 150px;
+    background-color:red;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;    
+
+}
+.create-button:hover{
+   background-color:rgb(53, 180, 53);
+  
+}
+.create-button a{
+  color: white;
+  text-decoration:none;
+  text-align: center;
+  display:block; 
+}
+
+.create-button, .create-link{
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;     
+    top: 50%;
+    left: 50%;
+    margin: 0;
+}

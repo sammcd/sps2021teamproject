@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="css/create.css">
+    <script src="script.js"></script>
+
+<body>
+    <!-- nav bar -->
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="index.html" class="nav-button"> Flashcard </a></li>
+            <li><a href="categories.html" class="nav-button"> Categories </a></li>
+            <li><a href="create.html" class="nav-button"> Create </a></li>
+            <li><a href="test.html" class="nav-button"> Test </a></li>
+        </ul>
+    </nav>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <p> front of card</p>
+            </div>
+            <div class="flip-card-back">
+        <p> back of card </p>
+            </div>
+        </div>
+    </div>
+
+    <div class= "insertion">
+        <form class="input" id="insertion">
+            <input type="text" name="front" placeholder="front...">
+            <br><br>
+            <input type="text" name="back" placeholder="back...">
+            <button></button>
+        </form>
+        <br>
+        <button onclick="addCard()">Create</button>
+        <p id="demo"></p>
+    <!-- <div class= "insertion" onload="loadCards()">
+        <form action= "/new-card" class="input" method="POST">
+            <input type="text" name="front" placeholder="front...">
+            <br><br>
+            <input type="text" name="back" placeholder="back...">
+            <button>Submit</button>
+        </form>
+        <hr/>
+        <ul id="card-list"></ul>-->
+    </div> 
+</body> 
+</html>

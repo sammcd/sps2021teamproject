@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* nav bar  */
+.navbar{
+    display: flex;
+    background-color:grey;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: baseline;
+    flex-grow: 1;
+    z-index: 999;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.navbar .menu li a:hover{
+    color:red;
+}
+
+ .navbar .menu .li a:active{
+     background-color: black;
+    color: white;
+ }
+
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+
+/*  */

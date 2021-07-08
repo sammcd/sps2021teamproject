@@ -26,12 +26,36 @@ function addCard() {
   document.getElementById("demo").innerHTML = text;
 }
 
-function addDeck(){
+function additionDeck(){
   window.localStorage.clear();
   var x = document.getElementById("addition");
   var a = new DeckHolder();
   a.createPlusDeck(Number(x.elements[0].value),Number(x.elements[1].value),Number(x.elements[2].value));
 }
+
+function subtractionDeck(){
+  window.localStorage.clear();
+  var x = document.getElementById("subtraction");
+  var a = new DeckHolder();
+  a.createMinusDeck(Number(x.elements[0].value),Number(x.elements[1].value));
+}
+
+function multiplicationDeck(){
+  window.localStorage.clear();
+  var x = document.getElementById("multiplication");
+  var a = new DeckHolder();
+  a.createMultiplicationDeck(Number(x.elements[0].value),Number(x.elements[1].value),Number(x.elements[2].value));
+}
+
+function divisionDeck(){
+  window.localStorage.clear();
+  var x = document.getElementById("division");
+  var a = new DeckHolder();
+  a.createDivisionDeck(Number(x.elements[0].value),Number(x.elements[1].value));
+}
+
+
+//classes
 
 class FlashCard{
   constructor(front, back){
@@ -85,6 +109,66 @@ class DeckHolder extends Deck{
       plusdeck.cardDeck.push(card);
     }
     console.log(plusdeck.toString());
+  }
+  createMinusDeck(numberOfCards, firstMax){
+    var minusdeck = new Deck("Minus");
+    const list =[...Array(firstMax+1).keys()];
+    var i;
+    for(i=0;i<numberOfCards;i++){
+      // Pick a random number from 0 to maximumNumber.
+      const firstNumber = list[Math.floor(Math.random() * list.length)];
+      const secondNumber = list[Math.floor(Math.random() * list.length)];
+      
+      var card=new FlashCard(firstNumber+ "-" + secondNumber + "= ?", firstNumber-secondNumber);
+      minusdeck.cardDeck.push(card);
+    }
+    console.log(minusdeck.toString());
+  }
+  createMultiplicationDeck(numberOfCards, firstMax, secondMax){
+    var multiplicationDeck = new Deck("Multiplication");
+    const list1 =[...Array(firstMax+1).keys()];
+    const list2 =[...Array(secondMax+1).keys()];
+    var i;
+    for(i=0;i<numberOfCards;i++){
+      // Pick a random number from 0 to maximumNumber.
+      const firstNumber = list1[Math.floor(Math.random() * list1.length)];
+      const secondNumber = list2[Math.floor(Math.random() * list2.length)];
+      
+      var card=new FlashCard(firstNumber+ "x" + secondNumber + "= ?", firstNumber*secondNumber);
+      multiplicationDeck.cardDeck.push(card);
+    }
+    console.log(multiplicationDeck.toString());
+  }
+  createDivisionDeck(numberOfCards, firstMax){
+    var divisionDeck = new Deck("Division");
+    const list =[...Array(firstMax+1).keys()];
+    var i; 
+    var j;
+    for(i=0;i<numberOfCards;i++){
+      const list1= [];
+
+      // Pick a random number from 0 to maximumNumber.
+      const firstNumber = list[Math.floor(Math.random() * list.length)];
+
+      //find b that giving out 0 remainder and push it in list1
+      for (j=1;j<=firstNumber;j++){
+        var x = firstNumber % j;
+        if (x===0){
+          list1.push(j);
+        }
+      }
+      var secondNumber=0;
+      if(firstNumber===0){
+        secondNumber = list[Math.floor(Math.random() * list.length)];
+      }
+      else {secondNumber = list1[Math.floor(Math.random() * list1.length)];}
+      console.log(firstNumber);
+      console.log(secondNumber);
+      console.log(list1);
+      var card = new FlashCard(firstNumber+ "/" + secondNumber + "= ?", firstNumber/secondNumber);
+      divisionDeck.cardDeck.push(card);
+    }
+    console.log(divisionDeck.toString());
   }
 }
 

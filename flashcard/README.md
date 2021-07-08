@@ -1,8 +1,4 @@
-This directory is where you'll write all of your code!
+# sps2021teamproject
+Team Repo for a Google SPS 2021 team project.
 
-By default it contains a barebones portfolio web app. To run a local server,
-execute this command:
-
-```
-mvn package exec:java
-```
+Vi Nguyen

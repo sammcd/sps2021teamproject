@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flashcards for everyone| home</title>
     <link rel="stylesheet" href="css/home.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -13,8 +14,22 @@
     <nav class="navbar">
             <ul class="menu">
                 <li><a href="home.html" class="nav-button"> Flashcard </a></li>
-                <li><a href="categories.html" class="nav-button"> Categories </a></li>
-                <li><a href="create.html" class="nav-button"> Card </a></li>
+                <li>
+                    <div class = "dropdown">
+                        <button class="dropbtn">Categories
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="math.html">Mathematics</a>
+                            <a href="#">Map</a>
+                            <a href="#">Alphabets</a>
+                            <a href="#">School</a>
+                            <a href="#">General knowledge</a>
+                            <a href="#">Languages</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="create.html" class="nav-button"> Create a new deck </a></li>
             </ul>
     </nav>
 
@@ -25,18 +40,6 @@
 
 <p class="choice">You can preselect a categor with the selected attribute:</p>
 
-<form action="create.html">
-    <label for="choice">Choose a category:</label>
-    <select id="categorychoice" name="category_name">
-        <option value="Mathematics" class="category">Mathematics</option>
-        <option value="map" class="category"> Map</option>
-        <option value="alphabets" class="category">Alphabets</option>
-        <option value="school" class="category">School</option>
-        <option value="gk" class="category">General knowledge </option>
-        <option value="languages" class="category">Languages</option>
-    </select>
-    <input id="searchbtn" type="submit">
-</form>
 
 
 <!-- get started button

@@ -55,6 +55,12 @@ function divisionDeck(){
 }
 
 
+//handle drop box in home page
+function handleSelect(elm)
+  {
+     window.location = elm.value+".html";
+  }
+
 //classes
 
 class FlashCard{

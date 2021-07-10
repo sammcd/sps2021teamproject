@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flashcards for everyone</title>
+    <title>flashcards for everyone| home</title>
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
             <ul class="menu">
                 <li><a href="home.html" class="nav-button"> Flashcard </a></li>
                 <li><a href="categories.html" class="nav-button"> Categories </a></li>
-                <li><a href="create.html" class="nav-button"> Create </a></li>
+                <li><a href="create.html" class="nav-button"> Card </a></li>
             </ul>
     </nav>
 
@@ -22,10 +22,28 @@
     <h1 class="name"> FLASHCARDS FOR EVERYONE </h1>
     <!-- <img src="images/img1.png" alt="LOGO" class="logo"> -->
 
-<!-- get started button -->
+
+<p class="choice">You can preselect a categor with the selected attribute:</p>
+
+<form action="create.html">
+    <label for="choice">Choose a category:</label>
+    <select id="categorychoice" name="category_name">
+        <option value="Mathematics" class="category">Mathematics</option>
+        <option value="map" class="category"> Map</option>
+        <option value="alphabets" class="category">Alphabets</option>
+        <option value="school" class="category">School</option>
+        <option value="gk" class="category">General knowledge </option>
+        <option value="languages" class="category">Languages</option>
+    </select>
+    <input id="searchbtn" type="submit">
+</form>
+
+
+<!-- get started button
 <div class="start-button">
     <a class="start-link" href="categories.html"> Start </a>
-</div>
+</div> -->
+
 
 
 </body>

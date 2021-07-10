@@ -12,14 +12,13 @@
     <!-- nav bar -->
     <nav class="navbar">
         <ul class="menu">
-            <li><a href="index.html" class="nav-button"> Flashcard </a></li>
+            <li><a href="home.html" class="nav-button"> Flashcard </a></li>
             <li><a href="categories.html" class="nav-button"> Categories </a></li>
             <li><a href="create.html" class="nav-button"> Create </a></li>
-            <li><a href="test.html" class="nav-button"> Test </a></li>
         </ul>
     </nav>
 
-    <div class="flip-card">
+    <!-- <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
                 <p> front of card</p>
@@ -39,16 +38,35 @@
         </form>
         <br>
         <button onclick="addCard()">Create</button>
-        <p id="demo"></p>
-    <!-- <div class= "insertion" onload="loadCards()">
-        <form action= "/new-card" class="input" method="POST">
-            <input type="text" name="front" placeholder="front...">
-            <br><br>
-            <input type="text" name="back" placeholder="back...">
-            <button>Submit</button>
-        </form>
-        <hr/>
-        <ul id="card-list"></ul>-->
-    </div> 
+        <p id="demo"></p> -->
+
+<header>
+    <div class="container">
+        <div class="nav">
+            <div>
+                <button id="showCreateCardBox">New Card</button>
+                <button id="delFlashcards">Delete Cards</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="create-card">
+        <h2 style="color: black;text-align: center;">Create Flashcard</h2>
+        <label for="question">Question</label>
+        <textarea id="question" maxlength="280"></textarea>
+        <label for="answer" maxlength="280">Answer</label>
+        <br>
+        <textarea id="answer"></textarea>
+        <div>
+            <button id="add-flashcard">Save</button> <button id="hideCreateCardBox">Close</button>
+        </div>
+    </div>
+    <div class="flashcards"></div>
+</div>
+
+<script src="create.js"></script>
+
 </body> 
 </html>

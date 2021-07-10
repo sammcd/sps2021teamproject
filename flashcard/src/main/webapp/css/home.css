@@ -7,6 +7,7 @@
 
 /* nav bar  */
 .navbar{
+ 
     display: flex;
     background-color:grey;
     overflow: hidden;
@@ -41,6 +42,8 @@
     color: #fff;
 }
 
+
+
 /* name */
 .name{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -61,69 +64,36 @@
 }
 
 /* get started button */
-.cat-button{
-    height: 60px;
-    font: normal normal 700 1em/4em Arial,sans-serif;    
-    overflow: hidden;
-    width: 150px;
-    background-color:red;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;    
-
-}
-
-.cat-button:hover{
-   background-color:rgb(53, 180, 53);
+.start-button{
+   display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:black;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
   
 }
-.cat-button a{
+
+#start-button:hover{
+   background-color:rgb(53, 180, 53);
+   opacity:1
+}
+.start-button a{
   color: white;
   text-decoration:none;
   text-align: center;
   display:block; 
 }
 
-.cat-button, .cat-link{
-    -webkit-transition: 0.3s;
-     -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;     
-    top: 50%;
-    left: 50%;
-    margin: 0;
-    
-}
-.create-button{
-    height: 60px;
-    font: normal normal 700 1em/4em Arial,sans-serif;    
-    overflow: hidden;
-    width: 150px;
-    background-color:red;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;    
-
-}
-.create-button:hover{
-   background-color:rgb(53, 180, 53);
-  
-}
-.create-button a{
-  color: white;
-  text-decoration:none;
-  text-align: center;
-  display:block; 
+.start-button:active {
+  background-color: lightcoral;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
-.create-button, .create-link{
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;     
-    top: 50%;
-    left: 50%;
-    margin: 0;
-}

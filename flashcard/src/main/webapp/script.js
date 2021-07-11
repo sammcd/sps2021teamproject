@@ -55,6 +55,19 @@ function divisionDeck(){
 }
 
 
+function numberWordsDeck(){
+  window.localStorage.clear();
+  var x = document.getElementById("numberWords");
+  var a = new DeckHolder();
+  a.createNumberWordsDeck(Number(x.elements[0].value),Number(x.elements[1].value));
+}
+
+//handle drop box in home page
+function handleSelect(elm)
+  {
+     window.location = elm.value+".html";
+  }
+
 //classes
 
 class FlashCard{
@@ -169,6 +182,204 @@ class DeckHolder extends Deck{
       divisionDeck.cardDeck.push(card);
     }
     console.log(divisionDeck.toString());
+  }
+
+  createNumberWordsDeck(numberOfCards, max)
+  {
+    var numberWordsDeck = new Deck("NumberWords");
+    var i;
+    for(i=0;i<numberOfCards;i++){
+      // Pick a random number from 0 to maximumNumber.
+      const number = Math.floor(Math.random() * max);
+      var stringnum= String(number);
+      var d= stringnum.length; //number of the digit of the number
+      if(number == 0)
+      {
+        var front = "zero";
+      }
+      else if (d<=2)
+      {
+        var front = this.number(number);
+      }
+      else if (d==3)
+      {
+        var first = Math.floor(number/100);
+        var second = number%100;
+        if (second == 0)
+        {
+          var front = this.number(first) + "hundread";
+        }
+        else {var front = this.number(first)+" hundred and " + this.number(second);}
+      }
+      else if (d==4)
+      {
+        var first = Math.floor(number/1000);
+        var second = Math.floor((number- first *1000)/100);
+        var third = (number- first *1000)%100;
+        if (second == 0 && third == 0)
+        {
+          var front = this.number(first) + " thousand";
+        }
+        else if (second == 0 && third != 0)
+        {
+          var front = this.number(first) + " thousand and " + this.number(third);
+        }
+        else //second != 0 and third != 0 
+        {
+          var front = this.number(first)+" thousand, " + this.number(second)+ " hundred and " + this.number(third);
+        }
+      }
+      var card = new FlashCard(front,number);
+      numberWordsDeck.cardDeck.push(card);
+    }
+    console.log(numberWordsDeck.toString());
+  }
+
+  number(n){
+    if (n == 1)
+    {
+      var answer = "one";
+    }
+    else if (n == 2)
+    {
+      var answer = "two";
+    }
+    else if (n == 3)
+    {
+      var answer = "three";
+    }
+    else if (n == 4)
+    {
+      var answer = "four";
+    }
+    else if (n == 5)
+    {
+      var answer = "five";
+    }
+    else if (n == 6)
+    {
+      var answer = "six";
+    }
+    else if (n == 7)
+    {
+      var answer = "seven";
+    }
+    else if (n == 8)
+    {
+      var answer = "eight";
+    }
+    else if (n == 9)
+    {
+      var answer = "nine";
+    }
+    else if (n == 10)
+    {
+      var answer = "ten";
+    }
+    else if (n == 11)
+    {
+      var answer = "eleven";
+    }
+    else if (n == 12)
+    {
+      var answer = "twelve";
+    }
+    else if (n == 13)
+    {
+      var answer = "thirteen";
+    }
+    else if (n == 14)
+    {
+      var answer = "fourteen";
+    }
+    else if (n == 15)
+    {
+      var answer = "fifteenth";
+    }
+    else if (n == 16)
+    {
+      var answer = "sixteenth";
+    }
+    else if (n == 17)
+    {
+      var answer = "seventeen";
+    }
+    else if (n == 18)
+    {
+      var answer = "eighteen";
+    }
+    else if (n == 19)
+    {
+      var answer = "nineteen";
+    }
+    else if (n >=20 && n < 30)
+    {
+      var answer = "twenty";
+      if (n-20 != 0)
+      {
+        answer += "-" + this.number(n-20);
+      }
+    }
+    else if (n >=30 && n < 40)
+    {
+      var answer = "thirty";
+      if (n-30 != 0)
+      {
+        answer += "-" + this.number(n-30);
+      }
+    }
+    else if (n >=40 && n < 50)
+    {
+      var answer = "fourty";
+      if (n-40 != 0)
+      {
+        answer += "-" + this.number(n-40);
+      }
+    }
+    else if (n >=50 && n < 60)
+    {
+      var answer = "fifty";
+      if (n-50 != 0)
+      {
+        answer += "-" + this.number(n-50);
+      }
+    }
+    else if (n >=60 && n < 70)
+    {
+      var answer = "sixty";
+      if (n-60 != 0)
+      {
+        answer += "-" + this.number(n-60);
+      }
+    }
+    else if (n >=70 && n < 80)
+    {
+      var answer = "seventy";
+      if (n-70 != 0)
+      {
+        answer += "-" + this.number(n-70);
+      }
+    }
+    else if (n >=80 && n < 90)
+    {
+      var answer = "eighty";
+      if (n-80 != 0)
+      {
+        answer += "-" + this.number(n-80);
+      }
+    }
+    else if (n >=90 && n < 100)
+    {
+      var answer = "ninety"
+      if (n-90 != 0)
+      {
+        answer += "-" + this.number(n-90);
+      }
+    }
+    else {
+      var answer = "";
+    }
+    return answer;
   }
 }
 

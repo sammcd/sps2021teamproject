@@ -94,12 +94,53 @@
 }
 #searchbtn:hover{opacity:1}
 
-#categorychoice {
-  width: 1;
-  height: 40px;
-  font-size: 14px;
-  font-family: 'arial';
-  margin-top: 200px;
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  color: black;
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color:grey;
+  border: none;
+  margin: 0;
+}
+
+/* Add a red background color to navbar links on hover */
+.dropdown:hover .dropbtn {
+  color:red;
+  outline: none;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:rgba(143, 105, 105, 0.466);
+  
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  text-decoration: none;
+  display: block; 
+  color: black;
+  clear: left;
+  text-align: center;
+  width: 170px;
+  background-color: rgb(240, 240, 240);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 #form {

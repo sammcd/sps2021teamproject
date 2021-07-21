@@ -11,15 +11,18 @@
 /* nav bar  */
 .navbar{
     display: flex;
-    background:linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, yellow, gold, orange, purple, blue);;
-    overflow: hidden;
-    flex-direction: row;
+    background:linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, yellow, gold, orange, purple, blue);
     justify-content: baseline;
     flex-grow: 1;
     z-index: 999;
     animation: gradient 15s ease infinite;
     background-size: 400% 400%;
     font-size: 20px;
+    /* background-color:grey; */
+    overflow: hidden;
+    flex-direction: row;
+    text-decoration: none;
+    height:99px;
     padding-top:15px;
     padding-left: 35px;
 
@@ -37,28 +40,91 @@
 }
 
 .navbar .menu li{
-    list-style: none;
-    display: inline-block;
+  list-style: none;
+  display: inline-block;
 }
 .navbar .menu li a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 20px 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .navbar .menu li a:hover{
-    color:red;
+  color:white;
 }
 
- .navbar .menu .li a:active{
-     background-color: black;
-    color: white;
- }
-
-.navbar.sticky .menu li a:hover{
-    color: #fff;
+.navbar .menu .li a:active{
+   background-color: black;
+  /* color: white; */
 }
+
+/* name */
+.name{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 50px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-display:initial;
+}
+
+/* The dropdown container */
+.dropdown {
+float: left;
+overflow: hidden;
+height: 63px;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+color: black;
+text-align: center;
+font-size: 20px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+/* background-color:grey; */
+background-color:transparent;
+text-decoration: underline;
+border: none;
+padding: 0;
+}
+
+/* Add a red background color to navbar links on hover */
+.dropdown:hover .dropbtn {
+color:white;
+outline: none;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+display: none;
+position: absolute;
+/* background-color:rgba(143, 105, 105, 0.466); */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+float: none;
+text-decoration: none;
+display: block; 
+color: rgba(0, 0, 0, 0.562);
+clear: left;
+text-align: center;
+width: 170px;
+background-color: rgba(240, 240, 240, 0.808);
+font-size: 10px;
+font-weight: 300;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+
+
 /*  */
 body{
   font-family: 'Nunito', sans-serif;
@@ -87,16 +153,22 @@ button:hover{
 
 .nav{
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   height: 70px;
-  padding: 0 20px;
+  width: 200px;
   /* background: #fff; */
 }
 
 .nav button{
   font-family: inherit;
   border: 1px solid red;
+}
+
+#showCreateCardBox, #delFlashcards{
+  padding: 20px;
 }
 
 .create-card{

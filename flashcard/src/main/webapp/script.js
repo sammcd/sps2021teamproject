@@ -1,4 +1,10 @@
 const additiondeck = new Array({});
+const subtractiondeck = new Array({});
+const multiplicationdeck = new Array({});
+const divisiondeck = new Array({});
+const numberwordsdeck = new Array({});
+
+
 
 //ADDITION
 function displayAdditionDeck(){
@@ -47,105 +53,35 @@ function createAdditionDeck(numberOfCards, firstMax, secondMax){
 }
 
 //SUBTRACTION
+function displaySubtractionDeck(){
+  localStorage.clear()
+  console.log(subtractiondeck)
+  console.log(JSON.stringify(subtractiondeck))
+  t= JSON.stringify(subtractiondeck)
+  const obj = JSON.parse(t);
+  console.log(obj[1].front)
+  var printout="";
+  for(var i =1;i<obj.length;i++)
+  {
+    printout+=obj[i].front+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +obj[i].back+"<br/>"
+  }
+  document.getElementById("text").innerHTML = printout;
+}
+
 function randomSubtractionDeck(){
   localStorage.clear();
-  var a = new DeckHolder();
-  a.createMinusDeck(20,20);
-  this.display();
-}
-
-function randomMultiplicationDeck(){
-  localStorage.clear();
-  var a = new DeckHolder();
-  a.createMultiplicationDeck(20,10,10);
-  this.display();
-}
-
-function randomDivisionDeck(){
-  localStorage.clear();
-  var a = new DeckHolder();
-  a.createDivisionDeck(20,10);
-  this.display();
+  createSubtractionDeck(20,20);
+  displaySubtractionDeck();
 }
 
 function subtractionDeck(){
   window.localStorage.clear();
   var x = document.getElementById("subtraction");
-  var a = new DeckHolder();
-  a.createMinusDeck(Number(x.elements[0].value),Number(x.elements[1].value));
+  createSubtractionDeck(Number(x.elements[0].value),Number(x.elements[1].value));
+  displaySubtractionDeck();
 }
 
-function multiplicationDeck(){
-  window.localStorage.clear();
-  var x = document.getElementById("multiplication");
-  var a = new DeckHolder();
-  a.createMultiplicationDeck(Number(x.elements[0].value),Number(x.elements[1].value),Number(x.elements[2].value));
-}
-
-function divisionDeck(){
-  window.localStorage.clear();
-  var x = document.getElementById("division");
-  var a = new DeckHolder();
-  a.createDivisionDeck(Number(x.elements[0].value),Number(x.elements[1].value));
-}
-
-
-function numberWordsDeck(){
-  window.localStorage.clear();
-  var x = document.getElementById("numberWords");
-  var a = new DeckHolder();
-  a.createNumberWordsDeck(Number(x.elements[0].value),Number(x.elements[1].value));
-}
-
-//handle drop box in home page
-function handleSelect(elm)
-  {
-     window.location = elm.value+".html";
-  }
-
-
-//CLASSES
-class FlashCard{
-  constructor(front, back){
-    this.front = front;
-    this.back = back;
-  }
-  //Methods
-  toString() {
-    return this.front + this.back;
-  }
-}
-
-// class Deck extends FlashCard{
-//   constructor(name){
-//     super();
-//     this.deckName = name;
-//     this.cardDeck = [];
-//   }
-//   // addCard(card){
-//   //   this.cardDeck.push(card)
-//   //   console.log(this.cardDeck.toString());
-//   // }
-//   toString(){
-//     var text="";
-//     var i;
-//     for (i=0;i<this.cardDeck.length;i++){
-//       var u=i+1;
-//       text+="Card "+u+"\t\tFront: "+ this.cardDeck[i].front + "\t\tBack: " + this.cardDeck[i].back + "\n";
-//     }
-//     return text;
-//   }
-// }
-
-// class DeckHolder extends Deck{
-//   constructor(){
-//     super();
-//     this.decklist=[];
-//   }
-  
-// }
-function createMinusDeck(numberOfCards, firstMax){
-  var minusdeck = new Deck("Minus");
+function createSubtractionDeck(numberOfCards, firstMax){
   const list =[...Array(firstMax+1).keys()];
   var i;
   for(i=0;i<numberOfCards;i++){
@@ -154,14 +90,43 @@ function createMinusDeck(numberOfCards, firstMax){
     const secondNumber = list[Math.floor(Math.random() * list.length)];
     
     var card=new FlashCard(firstNumber+ "-" + secondNumber + "= ?", firstNumber-secondNumber);
-    minusdeck.cardDeck.push(card);
-    window.localStorage.setItem(i+1, card.toString());
+    subtractiondeck.push(card);
+    window.localStorage.setItem('subtraction', JSON.stringify(subtractiondeck));
+    console.log(JSON.stringify(subtractiondeck))
   }
-  console.log(minusdeck.toString());
+  console.log(subtractiondeck.toString());
+}
+
+//MULTIPLICATION
+function displayMultiplicationDeck(){
+  localStorage.clear()
+  console.log(multiplicationdeck)
+  console.log(JSON.stringify(multiplicationdeck))
+  t= JSON.stringify(multiplicationdeck)
+  const obj = JSON.parse(t);
+  console.log(obj[1].front)
+  var printout="";
+  for(var i =1;i<obj.length;i++)
+  {
+    printout+=obj[i].front+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +obj[i].back+"<br/>"
+  }
+  document.getElementById("text").innerHTML = printout;
+}
+
+function randomMultiplicationDeck(){
+  localStorage.clear();
+  createMultiplicationDeck(20,10,10);
+  displayMultiplicationDeck();
+}
+
+function multiplicationDeck(){
+  window.localStorage.clear();
+  var x = document.getElementById("multiplication");
+  createMultiplicationDeck(Number(x.elements[0].value),Number(x.elements[1].value),Number(x.elements[2].value));
+  displayMultiplicationDeck();
 }
 
 function createMultiplicationDeck(numberOfCards, firstMax, secondMax){
-  var multiplicationDeck = new Deck("Multiplication");
   const list1 =[...Array(firstMax+1).keys()];
   const list2 =[...Array(secondMax+1).keys()];
   var i;
@@ -171,14 +136,43 @@ function createMultiplicationDeck(numberOfCards, firstMax, secondMax){
     const secondNumber = list2[Math.floor(Math.random() * list2.length)];
     
     var card=new FlashCard(firstNumber+ "x" + secondNumber + "= ?", firstNumber*secondNumber);
-    multiplicationDeck.cardDeck.push(card);
-    window.localStorage.setItem(i+1, card.toString());
+    multiplicationdeck.push(card);
+    window.localStorage.setItem('multiplicationdeck', JSON.stringify(multiplicationdeck));
   }
-  console.log(multiplicationDeck.toString());
+  console.log(multiplicationdeck.toString());
+}
+
+
+//DIVISION
+function displayMultiplicationDeck(){
+  localStorage.clear()
+  console.log(divisiondeck)
+  console.log(JSON.stringify(divisiondeck))
+  t= JSON.stringify(divisiondeck)
+  const obj = JSON.parse(t);
+  console.log(obj[1].front)
+  var printout="";
+  for(var i =1;i<obj.length;i++)
+  {
+    printout+=obj[i].front+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +obj[i].back+"<br/>"
+  }
+  document.getElementById("text").innerHTML = printout;
+}
+
+function randomDivisionDeck(){
+  localStorage.clear();
+  createDivisionDeck(20,10);
+  displayMultiplicationDeck();
+}
+
+function divisionDeck(){
+  window.localStorage.clear();
+  var x = document.getElementById("division");
+  createDivisionDeck(Number(x.elements[0].value),Number(x.elements[1].value));
+  displayMultiplicationDeck();
 }
 
 function createDivisionDeck(numberOfCards, firstMax){
-  var divisionDeck = new Deck("Division");
   const list =[...Array(firstMax+1).keys()];
   var i; 
   var j;
@@ -204,15 +198,44 @@ function createDivisionDeck(numberOfCards, firstMax){
     console.log(secondNumber);
     console.log(list1);
     var card = new FlashCard(firstNumber+ "/" + secondNumber + "= ?", firstNumber/secondNumber);
-    divisionDeck.cardDeck.push(card);
-    window.localStorage.setItem(i+1, card.toString());
+    divisiondeck.push(card);
+    window.localStorage.setItem('divisiondeck', JSON.stringify(divisiondeck));
   }
-  console.log(divisionDeck.toString());
+  console.log(divisiondeck.toString());
+}
+
+
+//NUMBER WORDS (up to 100,000)
+function displayNumberWordsDeck(){
+  localStorage.clear()
+  console.log(numberwordsdeck)
+  console.log(JSON.stringify(numberwordsdeck))
+  t= JSON.stringify(numberwordsdeck)
+  const obj = JSON.parse(t);
+  console.log(obj[1].front)
+  var printout="";
+  for(var i =1;i<obj.length;i++)
+  {
+    printout+=obj[i].front+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +obj[i].back+"<br/>"
+  }
+  document.getElementById("text").innerHTML = printout;
+}
+
+function numberWordsDeck(){
+  window.localStorage.clear();
+  var x = document.getElementById("numberWords");
+  createNumberWordsDeck(Number(x.elements[0].value),Number(x.elements[1].value));
+  displayNumberWordsDeck()
+}
+
+function randomNumberWordsDeck(){
+  localStorage.clear();
+  createNumberWordsDeck(20,1000);
+  displayNumberWordsDeck()
 }
 
 function createNumberWordsDeck(numberOfCards, max)
 {
-  var numberWordsDeck = new Deck("NumberWords");
   var i;
   for(i=0;i<numberOfCards;i++){
     // Pick a random number from 0 to maximumNumber.
@@ -233,7 +256,7 @@ function createNumberWordsDeck(numberOfCards, max)
       var second = number%100;
       if (second == 0)
       {
-        var front = this.number(first) + "hundread";
+        var front = this.number(first) + " hundred";
       }
       else {var front = this.number(first)+" hundred and " + this.number(second);}
     }
@@ -256,9 +279,10 @@ function createNumberWordsDeck(numberOfCards, max)
       }
     }
     var card = new FlashCard(front,number);
-    numberWordsDeck.cardDeck.push(card);
-  }
-  console.log(numberWordsDeck.toString());
+    numberwordsdeck.push(card);
+    window.localStorage.setItem('numberwordsdeck', JSON.stringify(numberwordsdeck));
+  } 
+  console.log(numberwordsdeck.toString());
 }
 
 function number(n){
@@ -407,6 +431,56 @@ function number(n){
   }
   return answer;
 }
+
+
+//handle drop box in home page
+function handleSelect(elm)
+  {
+     window.location = elm.value+".html";
+  }
+
+
+//CLASSES
+class FlashCard{
+  constructor(front, back){
+    this.front = front;
+    this.back = back;
+  }
+  //Methods
+  toString() {
+    return this.front + this.back;
+  }
+}
+
+// class Deck extends FlashCard{
+//   constructor(name){
+//     super();
+//     this.deckName = name;
+//     this.cardDeck = [];
+//   }
+//   // addCard(card){
+//   //   this.cardDeck.push(card)
+//   //   console.log(this.cardDeck.toString());
+//   // }
+//   toString(){
+//     var text="";
+//     var i;
+//     for (i=0;i<this.cardDeck.length;i++){
+//       var u=i+1;
+//       text+="Card "+u+"\t\tFront: "+ this.cardDeck[i].front + "\t\tBack: " + this.cardDeck[i].back + "\n";
+//     }
+//     return text;
+//   }
+// }
+
+// class DeckHolder extends Deck{
+//   constructor(){
+//     super();
+//     this.decklist=[];
+//   }
+  
+// }
+
 
 // function loadCards() {
 //   fetch('/list-cards').then(response => response.json()).then((cards) => {

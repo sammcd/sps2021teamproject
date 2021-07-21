@@ -17,7 +17,7 @@ function displayAdditionDeck(){
   var printout="";
   for(var i =1;i<obj.length;i++)
   {
-    printout+=obj[i].front+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +obj[i].back+"<br/>"
+    printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
   document.getElementById("text").innerHTML = printout;
 }
@@ -63,7 +63,7 @@ function displaySubtractionDeck(){
   var printout="";
   for(var i =1;i<obj.length;i++)
   {
-    printout+=obj[i].front+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +obj[i].back+"<br/>"
+    printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
   document.getElementById("text").innerHTML = printout;
 }
@@ -108,7 +108,7 @@ function displayMultiplicationDeck(){
   var printout="";
   for(var i =1;i<obj.length;i++)
   {
-    printout+=obj[i].front+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +obj[i].back+"<br/>"
+    printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
   document.getElementById("text").innerHTML = printout;
 }
@@ -154,7 +154,7 @@ function displayMultiplicationDeck(){
   var printout="";
   for(var i =1;i<obj.length;i++)
   {
-    printout+=obj[i].front+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +obj[i].back+"<br/>"
+    printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
   document.getElementById("text").innerHTML = printout;
 }
@@ -216,7 +216,7 @@ function displayNumberWordsDeck(){
   var printout="";
   for(var i =1;i<obj.length;i++)
   {
-    printout+=obj[i].front+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +obj[i].back+"<br/>"
+    printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
   document.getElementById("text").innerHTML = printout;
 }

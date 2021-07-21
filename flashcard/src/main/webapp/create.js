@@ -31,6 +31,7 @@ function divMaker(text) {
 
     h2_question.setAttribute("style", "border-top:1px solid red; padding: 15px; margin-top:30px");
     h2_question.innerHTML = text.my_question;
+    console(text.my_question)
 
     h2_answer.setAttribute("style", "text-align:center; display:none; color:red");
     h2_answer.innerHTML = text.my_answer;
@@ -56,6 +57,9 @@ addFlashcard = () => {
 
     contentArray.push(flashcard_info);
     localStorage.setItem('items', JSON.stringify(contentArray));
+    console.log(localStorage.getItem('items'));
+    console.log(JSON.stringify(contentArray));
+    console.log(contentArray[contentArray.length - 1])
     divMaker(contentArray[contentArray.length - 1]);
     question.value = '';
     answer.value = '';

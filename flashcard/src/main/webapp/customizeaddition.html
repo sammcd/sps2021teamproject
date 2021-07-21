@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/addition.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- nav bar  -->
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="home.html" class="nav-button"> Flashcard </a></li>
+            <li><a href="categories.html" class="nav-button"> Categories </a></li>
+            <li><a href="create.html" class="nav-button"> Card </a></li>
+        </ul>
+    </nav>
+    <br><br>
+    <form class="input" id="addition">
+        <h2>CUSTOMIZE</h2>
+        <br><br>
+        <input type="number" name="numberofcards" placeholder="Number of Cards...">
+        <br><br>
+        <input type="number" name="maximum1" placeholder="Maximum of 1st number...">
+        <br><br>
+        <input type="number" name="maximum2" placeholder="Maximum of 2nd number...">
+        <button></button>
+    </form>
+    <br>
+    <button onClick="additionDeck()" >Create Deck</button>
+    <a href="customizeaddition.html"><button>Clear</button></a>
+    <p id="text"></p>
+</body>
+</html>

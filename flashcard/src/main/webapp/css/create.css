@@ -11,12 +11,29 @@
 /* nav bar  */
 .navbar{
     display: flex;
-    background-color:grey;
+    background:linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, yellow, gold, orange, purple, blue);;
     overflow: hidden;
     flex-direction: row;
     justify-content: baseline;
     flex-grow: 1;
     z-index: 999;
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    font-size: 20px;
+    padding-top:15px;
+    padding-left: 35px;
+
+}
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
 .navbar .menu li{
@@ -28,7 +45,6 @@
     color: black;
     text-align: center;
     padding: 20px 30px;
-    font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .navbar .menu li a:hover{
@@ -46,15 +62,7 @@
 /*  */
 body{
   font-family: 'Nunito', sans-serif;
-  font-size: 1rem;
-  background:black
-
-}
-
-header{
-  background-color:black;
-  color: white;
-  font-size: 20px;
+  background:rgba(245, 222, 179, 0.63);
 }
 
 button{
@@ -64,6 +72,7 @@ button{
   border: 1px solid lightgray;
   border-radius: 5px;
   background: whitesmoke;
+  text-align: center;
 }
 
 button:hover{
@@ -73,6 +82,7 @@ button:hover{
 .container{
   width: 1280px;
   margin: auto;
+  text-align: center;
 }
 
 .nav{

@@ -32,9 +32,11 @@
         </ul>
     </nav>
     <h1 style="text-align: center;">Created Decks</h1>
-    <button onclick="deleteAllDecks()"> Delete All Decks</button>
-    <div class="delete_list" >
-        <input type="button" name="answer" value="Delete a Deck" onclick="onButtonClick()" >
+    
+    <div class="btn">
+        <button id="createdDeckbtn" onclick="document.location='create.html'">Create a new deck</button>
+        <button onclick="deleteAllDecks()" id="deleteAllbtn"> Delete All Decks</button>
+        <button name="answer" id="deleteDeckbtn" onclick="onButtonClick()" >Delete a Deck</button>
         <input class="hide" type="text" id="deletedeckname" placeholder="Deck's name..."/>
         <button class="hide" id="deletebtn" onclick="deteleteDeck()">Delete</button>
     </div>

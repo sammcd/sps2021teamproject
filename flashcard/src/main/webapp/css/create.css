@@ -129,6 +129,7 @@ display: block;
 body{
   font-family: 'Nunito', sans-serif;
   background:rgba(245, 222, 179, 0.63);
+  text-align: center;
 }
 
 button{
@@ -167,7 +168,7 @@ button:hover{
   border: 1px solid red;
 }
 
-#showCreateCardBox, #delFlashcards{
+#showCreateCardBox, #delFlashcards, #viewCreatedDecks{
   padding: 20px;
 }
 
@@ -305,7 +306,12 @@ button:hover{
 
 .hide{
   display:none;
+  text-align: center;
 }
 .show{
   display:block;
+  margin-left: 45.5%;
+  text-align: center;
 }
+
+#deletebtn{margin-left: 48.5%}

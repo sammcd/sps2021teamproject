@@ -31,7 +31,13 @@
             <li><a href="create.html" class="nav-button"> Create a new deck </a></li>
         </ul>
     </nav>
-
+    <h1 style="text-align: center;">Created Decks</h1>
+    <button onclick="clear()"> Delete All Decks</button>
+    <div class="delete_list" >
+        <input type="button" name="answer" value="Delete a Deck" onclick="onButtonClick()" >
+        <input class="hide" type="text" id="deletedeckname" placeholder="Deck's name..."/>
+        <button class="hide" id="deletebtn" onclick="deteleteDeck()">Delete</button>
+    </div>
     <br/>
     <p id="flashcards"></p>
 </div>

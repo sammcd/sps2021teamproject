@@ -302,3 +302,10 @@ button:hover{
   color: white;
   transform: rotateY(180deg);
 }
+
+.hide{
+  display:none;
+}
+.show{
+  display:block;
+}

@@ -7,19 +7,26 @@ const numberwordsdeck = new Array({});
 const deckname = document.getElementById("DeckName");
 
 
-function createADeck(){
-    if(deckname.value==='')
-        {alert("please fill out name of your new deck");}
-    else
-    {
-      if(localStorage.get(deckname.value))
-      {
-        alert("This deck already exists. New cards will be added to the existed deck")
-      }
-      createCard.style.display = "block";
-    }
+function clear(){
+    window.localStorage.clear();
+}
+
+function onButtonClick(){
+  document.getElementById('deletedeckname').className="show";
+  document.getElementById('deletebtn').className="show";
 
 }
+
+function deteleteDeck(){
+  const name= document.getElementById("deletedeckname").value
+  console.log(name)
+  if(localStorage.getItem(name)){
+    localStorage.removeItem(name)
+    location.reload();
+  }
+  else{alert("There is no deck with this name.")}
+}
+
 function displayCreatedDecks(){
   var i;
   printout=""

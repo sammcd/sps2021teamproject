@@ -39,11 +39,19 @@ body {
     height:99px;
     padding-top:15px;
     padding-left: 35px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+.nav-button{
+  height: 50px;
+  margin-top: 13px;
 }
 
 .navbar .menu li{
     list-style: none;
     display: inline-block;
+    height: 50px;
+    margin-top: 8px;
 }
 .navbar .menu li a {
     float: left;
@@ -79,7 +87,10 @@ body {
   overflow: hidden;
   height: 63px;
 }
-
+.nav-button{
+  margin-top: 12px;
+  height: 45px;
+}
 /* Dropdown button */
 .dropdown .dropbtn {
   color: black;
@@ -100,6 +111,8 @@ body {
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
+animation: 10s;
+
   display: none;
   position: absolute;
   /* background-color:rgba(143, 105, 105, 0.466); */
@@ -107,6 +120,8 @@ body {
 
 /* Links inside the dropdown */
 .dropdown-content a {
+animation: 10s;
+
   float: none;
   text-decoration: none;
   display: block; 
@@ -167,8 +182,7 @@ body {
     background-color:red;
     border-radius: 20px;
     text-align: center;
-    position: relative;    
-
+    position: relative; 
 }
 .create-button:hover{
    background-color:rgb(53, 180, 53);

@@ -7,8 +7,10 @@ const numberwordsdeck = new Array({});
 const deckname = document.getElementById("DeckName");
 
 
-function clear(){
+function deleteAllDecks(){
     window.localStorage.clear();
+    location.reload();
+
 }
 
 function onButtonClick(){

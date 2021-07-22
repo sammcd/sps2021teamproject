@@ -4,8 +4,48 @@ const multiplicationdeck = new Array({});
 const divisiondeck = new Array({});
 const numberwordsdeck = new Array({});
 
+const deckname = document.getElementById("DeckName");
 
 
+function createADeck(){
+    if(deckname.value==='')
+        {alert("please fill out name of your new deck");}
+    else
+    {
+      if(localStorage.get(deckname.value))
+      {
+        alert("This deck already exists. New cards will be added to the existed deck")
+      }
+      createCard.style.display = "block";
+    }
+
+}
+function displayCreatedDecks(){
+  var i;
+  printout=""
+  console.log(localStorage.length)
+  
+  for (i=0;i<localStorage.length;i++)
+  {
+      console.log(i)
+      var a=localStorage.key(i);
+      console.log(a)
+      printout+="<div><label>"+a+"</label><br/>";
+      
+
+      var b= localStorage.getItem(a)
+      console.log(b)
+      var obj=JSON.parse(b)
+      console.log("obj length",obj.length)
+      for(var j =0;j<obj.length;j++)
+      {
+          printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[j].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[j].back+"</p></div></div></div>"
+      }
+      document.getElementById("flashcards").innerHTML = printout;
+      printout+="</div>"
+
+  }
+}
 
 //ADDITION
 function displayAdditionDeck(){

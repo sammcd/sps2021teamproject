@@ -4,7 +4,6 @@ const deckname = document.getElementById("DeckName");
 const question = document.getElementById("question");
 const answer = document.getElementById("answer");
 var contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-const a=new Array()
 
 document.getElementById("add-flashcard").addEventListener("click", () => {
     addFlashcard();
@@ -21,6 +20,10 @@ document.getElementById("delFlashcards").addEventListener("click", () => {
 document.getElementById("hideCreateCardBox").addEventListener("click", () => {
     hideCreateCardBox();
 });
+
+// document.getElementById("displayCreatedDecks").addEventListener("click", () => {
+//     displayCreatedDecks();
+// });
 
 // contentArray.forEach(divMaker);
 
@@ -53,19 +56,40 @@ document.getElementById("hideCreateCardBox").addEventListener("click", () => {
 
 addFlashcard = () => {
     var card = new FlashCard(question.value,answer.value);
-    a.push(card)
-    localStorage.setItem(deckname, JSON.stringify(a));
-    console.log(localStorage.getItem(deckname));
+    if(localStorage.getItem(deckname.value))
+        {
+            var deck=JSON.parse(localStorage.getItem(deckname.value))
+        }
+    else{
+        var deck = new Array()
+    }
+
+    deck.push(card)
+    localStorage.setItem(deckname.value, JSON.stringify(deck));
+    console.log(localStorage.getItem(deckname.value));
     question.value = '';
     answer.value = '';
-    var deck=localStorage.getItem(deckname)
-  const obj = JSON.parse(deck);
-  var printout="";
-  for(var i =0;i<obj.length;i++)
-  {
-    printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
-  }
-  document.getElementById("flashcards").innerHTML = printout;
+    var printout="";
+    for(var i =0;i<deck.length;i++)
+    {
+        printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+deck[i].front+"</p></div><div class=\"flip-card-back\"><p>" +deck[i].back+"</p></div></div></div>"
+    }
+    document.getElementById("flashcards").innerHTML = printout;
+}
+
+displayCreatedDeck = () =>{
+        var a=localStorage.key(deckname);
+        console.log(a)
+
+        var b= localStorage.getItem(a)
+        console.log(b)
+        var obj=JSON.parse(b)
+        console.log(callback(localStorage.key(i)))
+        for(var i =0;i<obj.length;i++)
+        {
+            printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
+        }
+        document.getElementById("flashcards").innerHTML = printout;
 }
 
 delFlashcards = () => {
@@ -78,7 +102,20 @@ showCreateCardBox = () => {
     if(deckname.value==='')
     {alert("please fill out name of your new deck");}
     else
-    {createCard.style.display = "block";}
+    {
+        if(localStorage.getItem(deckname.value))
+        {
+            alert("This deck already exists. New cards will be added to the existed deck")
+            printout=""
+            var deck=JSON.parse(localStorage.getItem(deckname.value))
+            for(var i =0;i<deck.length;i++)
+            {
+                printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+deck[i].front+"</p></div><div class=\"flip-card-back\"><p>" +deck[i].back+"</p></div></div></div>"
+            }
+            document.getElementById("flashcards").innerHTML = printout;
+        }
+    createCard.style.display = "block";
+    }
 }
 
 hideCreateCardBox = () => {
@@ -86,3 +123,14 @@ hideCreateCardBox = () => {
 }
 
 
+//CLASSES
+class FlashCard{
+    constructor(front, back){
+      this.front = front;
+      this.back = back;
+    }
+    //Methods
+    toString() {
+      return this.front + this.back;
+    }
+  }

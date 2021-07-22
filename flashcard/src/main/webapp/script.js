@@ -294,11 +294,11 @@ function createNumberWordsDeck(numberOfCards, max)
     var d= stringnum.length; //number of the digit of the number
     if(number == 0)
     {
-      var front = "zero";
+      var back = "zero";
     }
     else if (d<=2)
     {
-      var front = this.number(number);
+      var back = this.number(number);
     }
     else if (d==3)
     {
@@ -306,9 +306,9 @@ function createNumberWordsDeck(numberOfCards, max)
       var second = number%100;
       if (second == 0)
       {
-        var front = this.number(first) + " hundred";
+        var back = this.number(first) + " hundred";
       }
-      else {var front = this.number(first)+" hundred and " + this.number(second);}
+      else {var back = this.number(first)+" hundred and " + this.number(second);}
     }
     else if (d==4)
     {
@@ -317,18 +317,18 @@ function createNumberWordsDeck(numberOfCards, max)
       var third = (number- first *1000)%100;
       if (second == 0 && third == 0)
       {
-        var front = this.number(first) + " thousand";
+        var back = this.number(first) + " thousand";
       }
       else if (second == 0 && third != 0)
       {
-        var front = this.number(first) + " thousand and " + this.number(third);
+        var back = this.number(first) + " thousand and " + this.number(third);
       }
       else //second != 0 and third != 0 
       {
-        var front = this.number(first)+" thousand, " + this.number(second)+ " hundred and " + this.number(third);
+        var back = this.number(first)+" thousand, " + this.number(second)+ " hundred and " + this.number(third);
       }
     }
-    var card = new FlashCard(front,number);
+    var card = new FlashCard(number, back);
     numberwordsdeck.push(card);
     window.localStorage.setItem('numberwordsdeck', JSON.stringify(numberwordsdeck));
   } 

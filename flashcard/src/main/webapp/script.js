@@ -1,8 +1,8 @@
-const additiondeck = new Array({});
-const subtractiondeck = new Array({});
-const multiplicationdeck = new Array({});
-const divisiondeck = new Array({});
-const numberwordsdeck = new Array({});
+const additiondeck = new Array();
+const subtractiondeck = new Array();
+const multiplicationdeck = new Array();
+const divisiondeck = new Array();
+const numberwordsdeck = new Array();
 
 const deckname = document.getElementById("DeckName");
 
@@ -37,7 +37,7 @@ function displayCreatedDecks(){
       console.log(i)
       var a=localStorage.key(i);
       console.log(a)
-      printout+="<div><label>"+a+"</label><br/>";
+      printout+="<div id=\"deck\"><label id=\"deckname\">"+"Name: "+a+"</label><br/>";
       
 
       var b= localStorage.getItem(a)
@@ -56,14 +56,11 @@ function displayCreatedDecks(){
 
 //ADDITION
 function displayAdditionDeck(){
-  localStorage.clear()
-  console.log(additiondeck)
-  console.log(JSON.stringify(additiondeck))
   t= JSON.stringify(additiondeck)
   const obj = JSON.parse(t);
   console.log(obj[1].front)
   var printout="";
-  for(var i =1;i<obj.length;i++)
+  for(var i =0;i<obj.length;i++)
   {
     printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
@@ -71,13 +68,11 @@ function displayAdditionDeck(){
 }
 
 function randomAdditionDeck(){
-  localStorage.clear();
   createAdditionDeck(20,10, 10);
   displayAdditionDeck();
 }
 
 function additionDeck(){
-  window.localStorage.clear();
   var x = document.getElementById("addition");
   createAdditionDeck(Number(x.elements[0].value),Number(x.elements[1].value),Number(x.elements[2].value));
   displayAdditionDeck();
@@ -87,14 +82,14 @@ function createAdditionDeck(numberOfCards, firstMax, secondMax){
   const list1 =[...Array(firstMax+1).keys()];
   const list2 =[...Array(secondMax+1).keys()];
   var i;
-  for(i=0;i<numberOfCards;i++){
+  for(i=1;i<=numberOfCards;i++){
     // Pick a random number from 0 to maximumNumber.
     const firstNumber = list1[Math.floor(Math.random() * list1.length)];
     const secondNumber = list2[Math.floor(Math.random() * list2.length)];
     
     var card=new FlashCard(firstNumber+ "+" + secondNumber + "= ?", firstNumber+secondNumber);
     additiondeck.push(card);
-    localStorage.setItem('additiondeck', JSON.stringify(additiondeck));
+    localStorage.setItem('Generated Addition Deck', JSON.stringify(additiondeck));
     console.log(JSON.stringify(additiondeck))
   }
   console.log(additiondeck.toString());
@@ -102,14 +97,13 @@ function createAdditionDeck(numberOfCards, firstMax, secondMax){
 
 //SUBTRACTION
 function displaySubtractionDeck(){
-  localStorage.clear()
   console.log(subtractiondeck)
   console.log(JSON.stringify(subtractiondeck))
   t= JSON.stringify(subtractiondeck)
   const obj = JSON.parse(t);
   console.log(obj[1].front)
   var printout="";
-  for(var i =1;i<obj.length;i++)
+  for(var i =0;i<obj.length;i++)
   {
     printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
@@ -117,13 +111,11 @@ function displaySubtractionDeck(){
 }
 
 function randomSubtractionDeck(){
-  localStorage.clear();
   createSubtractionDeck(20,20);
   displaySubtractionDeck();
 }
 
 function subtractionDeck(){
-  window.localStorage.clear();
   var x = document.getElementById("subtraction");
   createSubtractionDeck(Number(x.elements[0].value),Number(x.elements[1].value));
   displaySubtractionDeck();
@@ -139,7 +131,7 @@ function createSubtractionDeck(numberOfCards, firstMax){
     
     var card=new FlashCard(firstNumber+ "-" + secondNumber + "= ?", firstNumber-secondNumber);
     subtractiondeck.push(card);
-    window.localStorage.setItem('subtraction', JSON.stringify(subtractiondeck));
+    window.localStorage.setItem('Generated Subtraction Deck', JSON.stringify(subtractiondeck));
     console.log(JSON.stringify(subtractiondeck))
   }
   console.log(subtractiondeck.toString());
@@ -147,14 +139,12 @@ function createSubtractionDeck(numberOfCards, firstMax){
 
 //MULTIPLICATION
 function displayMultiplicationDeck(){
-  localStorage.clear()
   console.log(multiplicationdeck)
   console.log(JSON.stringify(multiplicationdeck))
   t= JSON.stringify(multiplicationdeck)
   const obj = JSON.parse(t);
-  console.log(obj[1].front)
   var printout="";
-  for(var i =1;i<obj.length;i++)
+  for(var i =0;i<obj.length;i++)
   {
     printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
@@ -162,13 +152,11 @@ function displayMultiplicationDeck(){
 }
 
 function randomMultiplicationDeck(){
-  window.localStorage.clear();
   createMultiplicationDeck(20,10,10);
   displayMultiplicationDeck();
 }
 
 function multiplicationDeck(){
-  window.localStorage.clear();
   var x = document.getElementById("multiplication");
   createMultiplicationDeck(Number(x.elements[0].value),Number(x.elements[1].value),Number(x.elements[2].value));
   displayMultiplicationDeck();
@@ -185,7 +173,7 @@ function createMultiplicationDeck(numberOfCards, firstMax, secondMax){
     
     var card=new FlashCard(firstNumber+ "x" + secondNumber + "= ?", firstNumber*secondNumber);
     multiplicationdeck.push(card);
-    window.localStorage.setItem('multiplicationdeck', JSON.stringify(multiplicationdeck));
+    window.localStorage.setItem('Generated Multiplication Deck', JSON.stringify(multiplicationdeck));
   }
   console.log(multiplicationdeck.toString());
 }
@@ -193,14 +181,12 @@ function createMultiplicationDeck(numberOfCards, firstMax, secondMax){
 
 //DIVISION
 function displayDivisionDeck(){
-  localStorage.clear()
   console.log(divisiondeck)
   console.log(JSON.stringify(divisiondeck))
   t= JSON.stringify(divisiondeck)
   const obj = JSON.parse(t);
-  console.log(obj[1].front)
   var printout="";
-  for(var i =1;i<obj.length;i++)
+  for(var i =0;i<obj.length;i++)
   {
     printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
@@ -208,13 +194,11 @@ function displayDivisionDeck(){
 }
 
 function randomDivisionDeck(){
-  localStorage.clear();
   createDivisionDeck(20,10);
   displayDivisionDeck();
 }
 
 function divisionDeck(){
-  window.localStorage.clear();
   var x = document.getElementById("division");
   createDivisionDeck(Number(x.elements[0].value),Number(x.elements[1].value));
   displayDivisionDeck();
@@ -246,7 +230,7 @@ function createDivisionDeck(numberOfCards, firstMax){
     console.log(list1);
     var card = new FlashCard(firstNumber+ "/" + secondNumber + "= ?", firstNumber/secondNumber);
     divisiondeck.push(card);
-    window.localStorage.setItem('divisiondeck', JSON.stringify(divisiondeck));
+    window.localStorage.setItem('Generated Divison Deck', JSON.stringify(divisiondeck));
   }
   console.log(divisiondeck.toString());
 }
@@ -254,14 +238,12 @@ function createDivisionDeck(numberOfCards, firstMax){
 
 //NUMBER WORDS (up to 100,000)
 function displayNumberWordsDeck(){
-  localStorage.clear()
   console.log(numberwordsdeck)
   console.log(JSON.stringify(numberwordsdeck))
   t= JSON.stringify(numberwordsdeck)
   const obj = JSON.parse(t);
-  console.log(obj[1].front)
   var printout="";
-  for(var i =1;i<obj.length;i++)
+  for(var i =0;i<obj.length;i++)
   {
     printout+="<div class=\"flip-card\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\"><p>"+obj[i].front+"</p></div><div class=\"flip-card-back\"><p>" +obj[i].back+"</p></div></div></div>"
   }
@@ -269,14 +251,12 @@ function displayNumberWordsDeck(){
 }
 
 function numberWordsDeck(){
-  window.localStorage.clear();
   var x = document.getElementById("numberWords");
   createNumberWordsDeck(Number(x.elements[0].value),Number(x.elements[1].value));
   displayNumberWordsDeck()
 }
 
 function randomNumberWordsDeck(){
-  localStorage.clear();
   createNumberWordsDeck(20,1000);
   displayNumberWordsDeck()
 }
@@ -327,7 +307,7 @@ function createNumberWordsDeck(numberOfCards, max)
     }
     var card = new FlashCard(number, back);
     numberwordsdeck.push(card);
-    window.localStorage.setItem('numberwordsdeck', JSON.stringify(numberwordsdeck));
+    window.localStorage.setItem('Generated Number-Words Deck', JSON.stringify(numberwordsdeck));
   } 
   console.log(numberwordsdeck.toString());
 }

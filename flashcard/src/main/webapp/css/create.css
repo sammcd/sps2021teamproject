@@ -347,5 +347,22 @@ button:hover{
 }
 #deletedeckname{
   padding: 5px;
-  border-radius: 10px;margin-top: 1%;
+  border-radius: 10px;
+  margin-top: 1%;
+}
+#deckname{
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 40px;
+
+}
+
+#deck{
+  padding-top: 20px;
+  padding-left: 0px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
 }

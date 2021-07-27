@@ -37,7 +37,7 @@ function displayCreatedDecks(){
       console.log(i)
       var a=localStorage.key(i);
       console.log(a)
-      printout+="<div id=\"deck\"><label id=\"deckname\">"+"Name: "+a+"</label><br/>";
+      printout+="<div id=\"deck\"><label id=\"deckname\">"+a+"</label><br/>";
       
 
       var b= localStorage.getItem(a)
@@ -56,9 +56,10 @@ function displayCreatedDecks(){
 
 //ADDITION
 function displayAdditionDeck(){
+  console.log(additiondeck)
+  console.log(JSON.stringify(additiondeck))
   t= JSON.stringify(additiondeck)
   const obj = JSON.parse(t);
-  console.log(obj[1].front)
   var printout="";
   for(var i =0;i<obj.length;i++)
   {
@@ -82,7 +83,7 @@ function createAdditionDeck(numberOfCards, firstMax, secondMax){
   const list1 =[...Array(firstMax+1).keys()];
   const list2 =[...Array(secondMax+1).keys()];
   var i;
-  for(i=1;i<=numberOfCards;i++){
+  for(i=0;i<numberOfCards;i++){
     // Pick a random number from 0 to maximumNumber.
     const firstNumber = list1[Math.floor(Math.random() * list1.length)];
     const secondNumber = list2[Math.floor(Math.random() * list2.length)];
@@ -101,7 +102,6 @@ function displaySubtractionDeck(){
   console.log(JSON.stringify(subtractiondeck))
   t= JSON.stringify(subtractiondeck)
   const obj = JSON.parse(t);
-  console.log(obj[1].front)
   var printout="";
   for(var i =0;i<obj.length;i++)
   {
@@ -138,7 +138,7 @@ function createSubtractionDeck(numberOfCards, firstMax){
 }
 
 //MULTIPLICATION
-function displayMultiplicationDeck(){
+function displayMultiplicationDeck(){ 
   console.log(multiplicationdeck)
   console.log(JSON.stringify(multiplicationdeck))
   t= JSON.stringify(multiplicationdeck)
@@ -185,6 +185,7 @@ function displayDivisionDeck(){
   console.log(JSON.stringify(divisiondeck))
   t= JSON.stringify(divisiondeck)
   const obj = JSON.parse(t);
+  console.log(obj[1].front)
   var printout="";
   for(var i =0;i<obj.length;i++)
   {
@@ -230,7 +231,7 @@ function createDivisionDeck(numberOfCards, firstMax){
     console.log(list1);
     var card = new FlashCard(firstNumber+ "/" + secondNumber + "= ?", firstNumber/secondNumber);
     divisiondeck.push(card);
-    window.localStorage.setItem('Generated Divison Deck', JSON.stringify(divisiondeck));
+    window.localStorage.setItem('Generated Division Deck', JSON.stringify(divisiondeck));
   }
   console.log(divisiondeck.toString());
 }
@@ -242,6 +243,7 @@ function displayNumberWordsDeck(){
   console.log(JSON.stringify(numberwordsdeck))
   t= JSON.stringify(numberwordsdeck)
   const obj = JSON.parse(t);
+  console.log(obj[1].front)
   var printout="";
   for(var i =0;i<obj.length;i++)
   {
@@ -460,6 +462,13 @@ function number(n){
 }
 
 
+function numberWordsDeck(){
+  window.localStorage.clear();
+  var x = document.getElementById("numberWords");
+  var a = new DeckHolder();
+  a.createNumberWordsDeck(Number(x.elements[0].value),Number(x.elements[1].value));
+}
+
 //handle drop box in home page
 function handleSelect(elm)
   {
@@ -498,52 +507,4 @@ class FlashCard{
 //     }
 //     return text;
 //   }
-// }
-
-// class DeckHolder extends Deck{
-//   constructor(){
-//     super();
-//     this.decklist=[];
-//   }
-  
-// }
-
-
-// function loadCards() {
-//   fetch('/list-cards').then(response => response.json()).then((cards) => {
-//     const cardListElement = document.getElementById('card-list');
-//     cards.forEach((card) => {
-//       cardListElement.appendChild(createCardElement(card));
-//     })
-//   });
-// }
-// //Creates an element that represents a card, including its delete button.
-// function createCardElement(card) {
-//     print("Hello");
-//     const cardElement = document.createElement('li');
-//     cardElement.className = 'FlashCard';
-
-//     const frontElement = document.createElement('span');
-//     frontElement.innerText = card.front;
-     
-//     const backElement = document.createElement('span');
-//     backElement.innerText = card.back;
-
-//     const deleteButtonElement = document.createElement('button');
-//     deleteButtonElement.innerText = 'Delete';
-//     deleteButtonElement.addEventListener('click', () => {
-//         deleteCard(card);
-//     // Remove the card from the DOM.
-//     cardElement.remove();
-//     });
-//     cardElement.appendChild(titleElement);
-//     cardElement.appendChild(deleteButtonElement);
-//     return cardElement;
-// }
-
-// // Tells the server to delete the task.
-// function deleteCard(card) {
-//   const params = new URLSearchParams();
-//   params.append('front', card.front);
-//   fetch('/delete-card', {method: 'POST', body: params});
 // }

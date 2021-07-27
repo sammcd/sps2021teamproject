@@ -347,6 +347,10 @@ button:hover{
 }
 #deletedeckname{
   padding: 5px;
+  border-radius: 10px;margin-top: 1%;
+}
+#deletedeckname{
+  padding: 5px;
   border-radius: 10px;
   margin-top: 1%;
 }

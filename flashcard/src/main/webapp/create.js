@@ -55,6 +55,16 @@ document.getElementById("hideCreateCardBox").addEventListener("click", () => {
 // }
 
 addFlashcard = () => {
+    if(question.value == '')
+    {
+        alert("Missing question")
+        return
+    }
+    else if(answer.value == '')
+    {
+        alert("Missing answer")
+        return
+    }
     var card = new FlashCard(question.value,answer.value);
     if(localStorage.getItem(deckname.value))
         {

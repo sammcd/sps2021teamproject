@@ -10,13 +10,11 @@ const deckname = document.getElementById("DeckName");
 function deleteAllDecks(){
     window.localStorage.clear();
     location.reload();
-
 }
 
 function onButtonClick(){
   document.getElementById('deletedeckname').className="show";
   document.getElementById('deletebtn').className="show";
-
 }
 
 function deteleteDeck(){
@@ -164,7 +162,7 @@ function displayMultiplicationDeck(){
 }
 
 function randomMultiplicationDeck(){
-  localStorage.clear();
+  window.localStorage.clear();
   createMultiplicationDeck(20,10,10);
   displayMultiplicationDeck();
 }
@@ -194,7 +192,7 @@ function createMultiplicationDeck(numberOfCards, firstMax, secondMax){
 
 
 //DIVISION
-function displayMultiplicationDeck(){
+function displayDivisionDeck(){
   localStorage.clear()
   console.log(divisiondeck)
   console.log(JSON.stringify(divisiondeck))
@@ -212,16 +210,15 @@ function displayMultiplicationDeck(){
 function randomDivisionDeck(){
   localStorage.clear();
   createDivisionDeck(20,10);
-  displayMultiplicationDeck();
+  displayDivisionDeck();
 }
 
 function divisionDeck(){
   window.localStorage.clear();
   var x = document.getElementById("division");
   createDivisionDeck(Number(x.elements[0].value),Number(x.elements[1].value));
-  displayMultiplicationDeck();
+  displayDivisionDeck();
 }
-
 function createDivisionDeck(numberOfCards, firstMax){
   const list =[...Array(firstMax+1).keys()];
   var i; 

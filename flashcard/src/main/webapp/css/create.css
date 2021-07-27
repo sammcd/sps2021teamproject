@@ -1,53 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   text-decoration: none;
 }
+
 
 /* nav bar  */
 .navbar{
     display: flex;
-    background-color:grey;
-    overflow: hidden;
-    flex-direction: row;
+    background:linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, yellow, gold, orange, purple, blue);
     justify-content: baseline;
     flex-grow: 1;
     z-index: 999;
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    font-size: 20px;
+    /* background-color:grey; */
+    overflow: hidden;
+    flex-direction: row;
+    text-decoration: none;
+    height:99px;
+    padding-top:15px;
+    padding-left: 35px;
+
+}
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
 .navbar .menu li{
-    list-style: none;
-    display: inline-block;
+  list-style: none;
+  display: inline-block;
 }
 .navbar .menu li a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 20px 30px;
-    font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .navbar .menu li a:hover{
-    color:red;
+  color:white;
 }
 
- .navbar .menu .li a:active{
-     background-color: black;
-    color: white;
- }
-
-.navbar.sticky .menu li a:hover{
-    color: #fff;
+.navbar .menu .li a:active{
+   background-color: black;
+  /* color: white; */
 }
 
-/* card   */
+/* name */
+.name{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 50px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-display:initial;
+}
+
+/* The dropdown container */
+.dropdown {
+float: left;
+overflow: hidden;
+height: 63px;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+color: black;
+text-align: center;
+font-size: 20px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+/* background-color:grey; */
+background-color:transparent;
+text-decoration: underline;
+border: none;
+padding: 0;
+}
+
+/* Add a red background color to navbar links on hover */
+.dropdown:hover .dropbtn {
+color:white;
+outline: none;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+display: none;
+position: absolute;
+/* background-color:rgba(143, 105, 105, 0.466); */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+float: none;
+text-decoration: none;
+display: block; 
+color: rgba(0, 0, 0, 0.562);
+clear: left;
+text-align: center;
+width: 170px;
+background-color: rgba(240, 240, 240, 0.808);
+font-size: 10px;
+font-weight: 300;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+
+
+/*  */
+body{
+  font-family: 'Nunito', sans-serif;
+  background:rgba(245, 222, 179, 0.63);
+  text-align: center;
+}
+
+button{
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: whitesmoke;
+  text-align: center;
+}
+
+button:hover{
+   color:red;
+}
+
+.container{
+  width: 1280px;
+  margin: auto;
+  text-align: center;
+}
+
+.nav{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 70px;
+  width: 200px;
+  /* background: #fff; */
+}
+
+.nav button{
+  font-family: inherit;
+  border: 1px solid red;
+}
+
+#showCreateCardBox, #delFlashcards, #viewCreatedDecks{
+  padding: 20px;
+}
+
+.create-card{
+  display: none;
+  width: 370px;
+  margin:auto;
+  padding: 20px;
+  margin-top: 10px;
+  background: whitesmoke;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+}
+
+.create-card textarea{
+  width: 100%;
+  border-radius: 5px;
+  font-family: inherit;
+  border: 1px solid lightgray;
+}
+
+.create-card button{
+  width: fit-content;
+}
+
+.flashcards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0px 10px;
+}
+
+.flashcard{
+  width: 370px;
+  height: 200px;
+  word-wrap: break-word;
+  margin: 10px; 
+  background:#fff;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+}
+
+/* .flashcard h2{
+  font-size: 1rem;
+} */
+
+@media(max-width:1280px){
+  .container{
+    width: 95%;
+  }
+}
+
+@media(max-width:768px){
+  .flashcard{
+    margin: auto;
+  }
+
+  .flashcard{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media(max-width:480px){
+  .nav{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .create-card{
+    width: 100%;
+  }
+
+  .flashcard{
+    width: 100%;
+  }
+
+}
+
+#flashcards{
+  display: block;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
 .flip-card {
+  display: inline-block;
   background-color: transparent;
   width: 300px;
   height: 200px;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin: 20px;
 }
 
 /* This container is needed to position the front and back side */
@@ -76,13 +295,78 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: #bbb;
-  color: black;
+  background: linear-gradient(#f69d3c, #3f87a6);
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 23px;
+  overflow: hidden;
+}
+.flip-card-front p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
+  background-color: rgb(0, 128, 255);
   color: white;
   transform: rotateY(180deg);
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 70px 0;
+  font-size: 23px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+}
+.flip-card-back p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide{
+  display:none;
+  text-align: center;
+}
+.show{
+  display:block;
+  margin-left: 44%;
+  text-align: center;
+}
+
+#deletebtn{margin-left: 48.5%}
+#deleteAllbtn, #deleteDeckbtn, #createdDeckbtn{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+#deletedeckname{
+  padding: 5px;
+  border-radius: 10px;margin-top: 1%;
+}
+#deletedeckname{
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: 1%;
+}
+#deckname{
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 40px;
+
+}
+
+#deck{
+  padding-top: 20px;
+  padding-left: 0px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
 }

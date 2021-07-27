@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories</title>
-    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="css/pages.css">
     <script src="script.js"></script>
-
+    <title>Math - Division</title>
 </head>
 <body>
     <!-- nav bar  -->
@@ -21,7 +20,6 @@
                     </button>
                     <div class="dropdown-content">
                         <a href="math.html">Mathematics</a>
-                        <a href="flag.html">Flags</a>
                         <a href="#">Map</a>
                         <a href="#">Alphabets</a>
                         <a href="#">School</a>
@@ -43,50 +41,20 @@
             </li>
         </ul>
     </nav>
-
-    <!-- types of categories -->
+    <br><br>
+    <div class="creation">
+        <form class="input" id="division">
+            <h2>CUSTOMIZE</h2><br><br>
+            <h3>a / b = ?</h3>
+            <br>
+            <input type="number" name="numberofcards" placeholder="Number of Cards..." style="text-align: center;">
+            <br><br>
+            <input type="number" name="maximum1" placeholder="Maximum of a..." style="text-align: center;">
+        </form>
+        <br>
+        <button onclick="divisionDeck()">Create Deck</button>
+        <a href="mathCustomizeDivision.html"><button>Clear</button></a>
     </div>
-    <div class="Heading">
-        <h1>Categories</h1>
-    </div>
-    <pre>
-        <div class="links">
-        <a href="math.html">Mathematics</a>
-        <br>
-        <br>
-        <br>
-        <a href="flag.html">Flags</a>
-        <br>
-        <br>
-        <br>
-        <a href="#map">Map</a>
-        <br>
-        <br>
-        <br>
-        <a href="#alphabets">Alphabets</a>
-        <br>
-        <br>
-        <br>
-        <a href="#school">School</a>
-        <br>
-        <br>
-        <br>
-        <a href="#gk">General knowledge</a>
-        <br>
-        <br>
-        <br>
-        <a href="#langugaes">Languages</a>
-        <br>
-        <br>
-        <br>
-        <a href="#customcard">Custom Quiz </a>
-        <br>
-        <br>
-        <br>
-    </pre>
-    </div>
-    <div class="create-button">
-        <a class="create-link" href="create.html">Create</a>
-    </div>
+    <p id="text"></p>
 </body>
 </html>
